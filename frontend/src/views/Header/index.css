@@ -1,31 +1,30 @@
 #header {
+  position: absolute;
   display: flex;
-  height: 10rem;
-  padding: 0 8rem;
+  width: 100%;
+  height: 9.3rem;
+  padding: 0 2rem;
   background: #000000;
   box-shadow: 0rem 0.2rem 0.7rem 0.3rem rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 #header .block-logo-column {
   display: flex;
-  flex: 1 0 50%;
+  flex: 1 1 32%;
   align-items: center;
   justify-content: flex-end;
-  background-color: black;
-}
-#header .block-logo-container {
-  margin-right: 40%;
 }
 #header .block-logo {
   width: 16.4rem;
   height: 4.5rem;
 }
+#header .separator {
+  flex: 1 1 36%;
+}
 #header .discord-button-column {
   display: flex;
-  flex: 1 0 50%;
+  flex: 1 1 32%;
   align-items: center;
-}
-#header .discord-button-link {
-  margin-left: 40%;
 }
 #header .discord-button {
   display: flex;
@@ -44,5 +43,5 @@
 }
 #header .discord-logo {
   width: 8.2rem;
-  height: 2.247rem;
+  height: 2.3rem;
 }

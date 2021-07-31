@@ -1,22 +1,22 @@
 import React from 'react';
 
-import logo from '../../assets/images/logoWhiteStacked.png';
-import discordLogo from '../../assets/images/discordLogo.png';
+import logo from '../../assets/images/logoWhiteStacked.webp';
+import discordLogo from '../../assets/images/discordLogo.webp';
 import './index.css';
 
 export default function Header() {
   return (
-    <div id='header'>
+    <header id='header'>
       <div className='block-logo-column'>
-        <div className='block-logo-container'>
+        <a href='/'>
           <div className='block-logo'>
             <img src={logo} width='104' height='45' alt='Block::Block logo' />
           </div>
-        </div>
+        </a>
       </div>
+      <div className='separator' />
       <div className='discord-button-column'>
         <a
-          className='discord-button-link'
           href='https://discord.com/invite/Fe3WYFxQ'
           target='_blank'
           rel='noreferrer'
@@ -27,13 +27,13 @@ export default function Header() {
               <img
                 src={discordLogo}
                 width='82'
-                height='22.47'
+                height='23'
                 alt='Block::Block logo'
               />
             </div>
           </div>
         </a>
       </div>
-    </div>
+    </header>
   );
 }

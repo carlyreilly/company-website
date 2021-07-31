@@ -1,16 +1,14 @@
 @import-normalize;
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 10px;
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('./assets/fonts/BarlowCondensed-Medium.ttf');
+  font-display: swap;
 }
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
 }
 body {
   margin: 0;
