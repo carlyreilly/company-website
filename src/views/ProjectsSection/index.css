@@ -1,12 +1,11 @@
 #projects-section {
-  position: absolute;
-  top: 1696px;
-  height: 1200px;
+  /* top: 1696px; */
+  /* height: 1200px; */
   width: 100%;
   z-index: 2;
 }
 #projects-section .projects-background {
-  width: 100%;
-  height: 1200px;
-  object-fit: cover;
+  /* width: 100%; */
+  /* height: 1200px; */
+  /* object-fit: cover; */
 }
