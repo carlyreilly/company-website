@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/company-website/static/css/main.d1aae338.chunk.css",
+    "main.js": "/company-website/static/js/main.f65a800b.chunk.js",
+    "main.js.map": "/company-website/static/js/main.f65a800b.chunk.js.map",
+    "runtime-main.js": "/company-website/static/js/runtime-main.4914d35d.js",
+    "runtime-main.js.map": "/company-website/static/js/runtime-main.4914d35d.js.map",
+    "static/css/2.d55d44d6.chunk.css": "/company-website/static/css/2.d55d44d6.chunk.css",
+    "static/js/2.31ec84e3.chunk.js": "/company-website/static/js/2.31ec84e3.chunk.js",
+    "static/js/2.31ec84e3.chunk.js.map": "/company-website/static/js/2.31ec84e3.chunk.js.map",
+    "static/js/3.11086c8c.chunk.js": "/company-website/static/js/3.11086c8c.chunk.js",
+    "static/js/3.11086c8c.chunk.js.map": "/company-website/static/js/3.11086c8c.chunk.js.map",
+    "index.html": "/company-website/index.html",
+    "static/css/2.d55d44d6.chunk.css.map": "/company-website/static/css/2.d55d44d6.chunk.css.map",
+    "static/css/main.d1aae338.chunk.css.map": "/company-website/static/css/main.d1aae338.chunk.css.map",
+    "static/js/2.31ec84e3.chunk.js.LICENSE.txt": "/company-website/static/js/2.31ec84e3.chunk.js.LICENSE.txt",
+    "static/media/blocks10x.f2dd0971.webp": "/company-website/static/media/blocks10x.f2dd0971.webp",
+    "static/media/blocks2-10x.2c0f8eb5.webp": "/company-website/static/media/blocks2-10x.2c0f8eb5.webp",
+    "static/media/discordLogo.2722b53e.webp": "/company-website/static/media/discordLogo.2722b53e.webp",
+    "static/media/floatingPunk.1e5ff8e6.webp": "/company-website/static/media/floatingPunk.1e5ff8e6.webp",
+    "static/media/heroBackground.e775e5d4.webp": "/company-website/static/media/heroBackground.e775e5d4.webp",
+    "static/media/kryptosignBackground.952e67ae.webp": "/company-website/static/media/kryptosignBackground.952e67ae.webp",
+    "static/media/kryptosignSite.8e5f34b5.webp": "/company-website/static/media/kryptosignSite.8e5f34b5.webp",
+    "static/media/logoBlackStacked.f5a6ebcf.webp": "/company-website/static/media/logoBlackStacked.f5a6ebcf.webp",
+    "static/media/logoWhiteStacked.d59063ee.webp": "/company-website/static/media/logoWhiteStacked.d59063ee.webp",
+    "static/media/menschBackground.7560708a.webp": "/company-website/static/media/menschBackground.7560708a.webp",
+    "static/media/menschSite.7aa364a4.webp": "/company-website/static/media/menschSite.7aa364a4.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4914d35d.js",
+    "static/css/2.d55d44d6.chunk.css",
+    "static/js/2.31ec84e3.chunk.js",
+    "static/css/main.d1aae338.chunk.css",
+    "static/js/main.f65a800b.chunk.js"
+  ]
+}
