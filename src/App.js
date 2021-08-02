@@ -1,4 +1,3 @@
-import { ParallaxProvider } from 'react-scroll-parallax';
 import Header from './views/Header';
 import HeroArea from './views/HeroArea';
 import WhoSection from './views/WhoSection';
@@ -7,13 +6,13 @@ import Footer from './views/Footer';
 
 function App() {
   return (
-    <ParallaxProvider>
+    <div>
       <Header />
       <HeroArea />
       <WhoSection />
       <ProjectsSection />
       <Footer />
-    </ParallaxProvider>
+    </div>
   );
 }
 

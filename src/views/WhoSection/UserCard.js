@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, StyleSheet } from 'aphrodite';
 
-export default function UserCard({avatarImg, name, description}) {
+export default function UserCard({img, name, description}) {
   return (
     <div className={css(styles.container)}>
       <div className={css(styles.imgSection)}>
@@ -9,7 +9,7 @@ export default function UserCard({avatarImg, name, description}) {
           height={90}
           width={90}
           className={css(styles.avatar)}
-          src={avatarImg}
+          src={img}
         ></img>
       </div>
       <div className={css(styles.name)}>
