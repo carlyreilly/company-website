@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     },
 
     "@media only screen and (min-width: 1024px)": {
-      top: 800,
+      top: 780,
     },
 
     "@media only screen and (max-width: 767px)": {
