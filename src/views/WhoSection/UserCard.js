@@ -44,6 +44,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 90,
     height: 90,
+    objectFit: 'cover',
+    objectPosition: 'top',
   },
   name: {
     fontWeight: 500,

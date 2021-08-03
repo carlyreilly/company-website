@@ -3,3 +3,11 @@
   background: #101010;
   z-index: 3;
 }
+
+.BrainhubCarousel__arrows:disabled {
+  opacity: .1;
+}
+
+.BrainhubCarousel__arrows {
+  background-color: unset!important;
+}

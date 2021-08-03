@@ -1,15 +1,9 @@
 import { css, StyleSheet } from 'aphrodite';
 import React, { useState } from 'react';
 
-import menschBackground from '../../assets/images/menschBackground.webp';
-import kryptosignBackground from '../../assets/images/kryptosignBackground.webp';
-import menschPreview from '../../assets/images/menschSite.webp';
-import kryptosignPreview from '../../assets/images/kryptosignSite.webp';
-// import battleVideo from '../../assets/videos/battleVideo.mp4';
 import './index.css';
 
-export default function ProjectsSection() {
-  const [activeProject, setActiveProject] = useState('meebitsdao');
+export default function ProjectsSection({activeProject, setActiveProject}) {
   const [meebitsVideoPlaying, setMeebitsVideoPlaying] = useState(false);
   
   const projects = [
@@ -56,70 +50,27 @@ export default function ProjectsSection() {
     }
   ];
 
-  const playMeebitsVideo = () => {
-    document.getElementById('meebits-video').play();
-    setMeebitsVideoPlaying(true);
-  }
+  // const playMeebitsVideo = () => {
+  //   document.getElementById('meebits-video').play();
+  //   setMeebitsVideoPlaying(true);
+  // }
 
   const updateActiveTab = (id) => {
     setActiveProject(id);
     setMeebitsVideoPlaying(false);
   }
-
-  const renderHero = () => {
-    switch(activeProject) {
-      case 'meebitsdao':
-        return (
-          <video
-            id="meebits-video"
-            className={css(styles.meebitBattle) + ' projects-background'}
-            src={"https://www.dropbox.com/s/3t966odxlq2ugft/210526_Battle_FINAL.mp4?raw=1"}
-            type='video/mp4'
-            width='1023'
-            height='640'
-            alt='yellow background with small squares of various colors peppered throughout'
-            loop
-          />  
-        );
-      case 'menschmaschine':
-        return (
-          <img className={css(styles.imageBackground)} src={menschBackground} width={2048} height={1296}></img>
-        );
-      case 'kryptosign':
-        return (
-          <img className={css(styles.imageBackground)} src={kryptosignBackground} width={2048} height={1296}></img>
-        );
-      default:
-        return null;
-    }
-  }
-
-  const renderPreviews = () => {
-    switch(activeProject) {
-      case 'menschmaschine':
-        return (
-          <img className={css(styles.menschPreview)} src={menschPreview}></img>
-        );
-      case 'kryptosign':
-        return (
-          <img className={css(styles.kryptosignPreview)} src={kryptosignPreview}></img>
-        );
-      default:
-        return null;
-    }
-  }
   
   return (
     <div id='projects-section' className={css(styles.container)}>
       <div className={css(styles.inlay)}>
-        {activeProject === 'meebitsdao'
+        {/* {activeProject === 'meebitsdao'
           ? meebitsVideoPlaying
             ? null
             : <div className={css(styles.play)} onClick={playMeebitsVideo}>
                 <i class="fad fa-play-circle"></i>
               </div>
           : null
-        }
+        } */}
         <h2 className={css(styles.title)}>
           Our 
           <br />
@@ -150,8 +101,6 @@ export default function ProjectsSection() {
           })}
         </div>
       </div>
-      { renderHero() }
-      { renderPreviews() }
     </div>
   );
 }
@@ -159,6 +108,7 @@ export default function ProjectsSection() {
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
+    minHeight: '100vh',
   },
   active: {
     opacity: 1,
@@ -171,17 +121,8 @@ const styles = StyleSheet.create({
     border: 0,
     color: '#fff',
     fontSize: 16,
-    fontWeight: 600,
+    fontWeight: 500,
     cursor: 'pointer',
-  },
-  meebitBattle: {
-    width: '100%',
-    height: '100%',
-
-    '@media only screen and (max-width: 767px)': {
-      height: '100vh',
-      objectFit: 'cover',
-    }
   },
   tabs: {
     marginLeft: 'auto',
@@ -227,57 +168,11 @@ const styles = StyleSheet.create({
     cursor: 'pointer',
     zIndex: 4,
   },
-  menschPreview: {
-    position: 'absolute',
-    left: '15%',
-    maxHeight: '90vh',
-    objectFit: 'contain',
-    top: 81,
-    "@media only screen and (max-width: 767px)": {
-      display: 'none',
-    },
-    "@media only screen and (min-width: 768px)": {
-      maxHeight: '45vh',
-      left: 32,
-    },
-
-    "@media only screen and (min-width: 1024px)": {
-      maxHeight: '70vh',
-      left: 50,
-    },
-    "@media only screen and (min-width: 1350px)": {
-      maxHeight: '90vh',
-      left: '15%',
-    }
-  },
-  kryptosignPreview: {
-    position: 'absolute',
-    left: '15%',
-    maxHeight: '90vh',
-    objectFit: 'contain',
-    top: 77,
-
-    "@media only screen and (max-width: 767px)": {
-      display: 'none',
-    },
-    "@media only screen and (min-width: 768px)": {
-      maxHeight: '45vh',
-      left: 32,
-    },
-
-    "@media only screen and (min-width: 1024px)": {
-      maxHeight: '70vh',
-      left: 50,
-    },
-    "@media only screen and (min-width: 1350px)": {
-      maxHeight: '90vh',
-      left: '15%',
-    }
-  },
   projectTitle: {
     fontSize: 30,
     marginTop: 0,
     marginBottom: 0,
+    fontWeight: 500,
 
     "@media only screen and (max-width: 767px)": {
       fontSize: 24,
@@ -285,12 +180,6 @@ const styles = StyleSheet.create({
   },
   projectDescription: {
     fontSize: 18,
-  },
-  imageBackground: {
-    maxHeight: '105vh',
-    width: '100%',
-    objectFit: 'cover',
-    zIndex: 1,
   },
   inlay: {
     position: 'absolute',

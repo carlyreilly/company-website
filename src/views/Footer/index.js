@@ -4,6 +4,7 @@ import logo from '../../assets/images/logoWhiteStacked.webp';
 import discordLogo from '../../assets/images/discordLogo.webp';
 
 import './index.css';
+import EmailSubscribe from './EmailSubscribe';
 export default function Footer() {
   return (
     <div id='footer' className={css(styles.footer)}>
@@ -36,13 +37,16 @@ export default function Footer() {
               </div>
             </a>
           </div>
-          <a href="" target="_blank">
+          <a href="https://twitter.com/blockblockio" target="_blank">
             <i className={css(styles.icon) + " fab fa-twitter"}></i>
           </a>
-          <a href="" target="_blank">
+          <a href="https://www.linkedin.com/company/block-block/" target="_blank">
             <i className={css(styles.icon) + " fab fa-linkedin-in"}></i>
           </a>
         </div>
+      </div>
+      <div className={css(styles.right)}>
+        <EmailSubscribe />
       </div>
     </div>
   );
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
   footer: {
     padding: 38,
     display: 'flex',
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
@@ -78,8 +82,8 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     color: '#000',
     background: '#fff',
-    padding: 12,
-    fontSize: '2em',
+    padding: 8,
+    fontSize: '1.75em',
     borderRadius: '50%',
   },
   flexColumn: {

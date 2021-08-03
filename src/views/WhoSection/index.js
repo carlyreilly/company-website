@@ -69,14 +69,14 @@ export default function WhoSection() {
         </p>
       </div>
       <div className={css(styles.carouselSection)}>
-        <Carousel 
+        <Carousel
           plugins={[
             'arrows',
             'infinite',
             {
               resolve: slidesToShowPlugin,
               options: {
-                numberOfSlides: 5
+                numberOfSlides: 4
               }
             },
           ]}
@@ -112,7 +112,7 @@ export default function WhoSection() {
                 {
                   resolve: slidesToShowPlugin,
                   options: {
-                    numberOfSlides: 5,
+                    numberOfSlides: 4,
                   },
                 },
               ],
@@ -124,7 +124,7 @@ export default function WhoSection() {
                 {
                   resolve: slidesToShowPlugin,
                   options: {
-                    numberOfSlides: 5,
+                    numberOfSlides: 4,
                   },
                 },
               ],
@@ -151,8 +151,8 @@ export default function WhoSection() {
 
 const styles = StyleSheet.create({
   container: {
-    background: '#101010',
-    minHeight: '100vh',
+    background: '#1A1A1A',
+    // minHeight: '100vh',
     '@media only screen and (min-width: 768px)': {
       paddingTop: 50,
       paddingBottom: 50,
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     maxWidth: 170,
     fontSize: 60,
     color: '#fff',
-    fontWeight: 700,
+    fontWeight: 500,
     whiteSpace: 'pre-wrap',
     marginRight: 40,
     zIndex: 3,

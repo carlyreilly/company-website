@@ -7,23 +7,28 @@ import logo from '../../assets/images/logoBlackStacked.webp';
 import floatingPunk from '../../assets/images/floatingPunk.webp';
 import blocks10x2 from '../../assets/images/blocks2-10x.webp';
 import './index.css';
+import ProjectsHero from '../ProjectsSection/ProjectsHero';
 
-export default function HeroArea() {
+export default function HeroArea({activeProject}) {
   const [activeBackground, setActiveBackground] = useState('blocks');
+  const [translateAmount, setTranslateAmount] = useState(0);
 
   useEffect(() => {
     const handleScroll = (e) => {
-      const switchElem = document.getElementById('who-section');
+      const projectsElement = document.getElementById('projects-hero');
+      const switchElement = document.getElementById('who-section');
 
-      if (window.pageYOffset >= switchElem.offsetTop) {
-        if (activeBackground !== 'projects') {
-          setActiveBackground('projects');
-        }
-      } else {
+      if (switchElement.getBoundingClientRect().top >= 0) {
         if (activeBackground !== 'blocks') {
           setActiveBackground('blocks');
         }
+      } else {
+        if (activeBackground !== 'projects') {
+          setActiveBackground('projects');
+        }  
       }
+
+      setTranslateAmount(-(window.pageYOffset / 1.8));
     }
 
     window.addEventListener('scroll', handleScroll);
@@ -31,21 +36,26 @@ export default function HeroArea() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     }
-  }, [activeBackground]);
+  }, [activeBackground, translateAmount]);
 
   return (
     <div className={css(styles.heroContainer)}>
       <div className={css(styles.background)} id='hero-area'>
         {activeBackground === 'blocks'
-          ? <img
-              className='hero-background'
-              src={heroBackground}
-              width='1023'
-              height='640'
-              alt='yellow background with small squares of various colors peppered throughout'
-            />
+          ?         <img
+          className={css(styles.blocksBackground) + ' hero-background'}
+          id="blocks-background"
+          src={heroBackground}
+          width='1023'
+          height='640'
+          alt='yellow background with small squares of various colors peppered throughout'
+        />
           : null
         }
+        <ProjectsHero
+          activeProject={activeProject}
+          translate={translateAmount}
+        />
       </div>
       <div id='hero-area-overlay'>
         <div className={css(styles.card)}>
@@ -103,7 +113,8 @@ export default function HeroArea() {
 const styles = StyleSheet.create({
   heroContainer: {
     position: 'relative',
-    minHeight: 'calc(100vh - 100px)',
+    height: 'calc(100vh - 100px)',
+    maxHeight: 800,
     paddingTop: 100,
     display: 'flex',
     alignItems: 'center',
@@ -112,6 +123,9 @@ const styles = StyleSheet.create({
     "@media only screen and (max-width: 767px)": {
       overflow: 'hidden',
     }
+  },
+  blocksBackground: {
+    maxHeight: 800,
   },
   background: {
     position: 'fixed',
