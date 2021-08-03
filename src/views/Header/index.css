@@ -8,6 +8,7 @@
   box-shadow: 0rem 0.2rem 0.7rem 0.3rem rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
+
 #header .block-logo-column {
   display: flex;
   flex: 1 1 32%;
@@ -44,4 +45,19 @@
 .discord-logo {
   width: 8.2rem;
   height: 2.3rem;
+}
+
+@media only screen and (max-width: 767px) {
+  #header .block-logo-column {
+    flex: unset;
+  }
+
+  .discord-button-column {
+    flex: unset;
+  }
+
+  #header .block-logo {
+    width: unset;
+    margin-right: 16px;
+  }
 }

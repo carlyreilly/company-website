@@ -1,72 +1,64 @@
 import { css, StyleSheet } from 'aphrodite';
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion";
 
 import menschBackground from '../../assets/images/menschBackground.webp';
 import kryptosignBackground from '../../assets/images/kryptosignBackground.webp';
 import menschPreview from '../../assets/images/menschSite.webp';
 import kryptosignPreview from '../../assets/images/kryptosignSite.webp';
-import meebitsdaoBackground from '../../assets/images/meebitsdaoBackground.webp';
 
 export default function ProjectsHero({activeProject, translate}) {
   const renderHero = () => {
     switch(activeProject) {
       case 'meebitsdao':
         return (
-          <AnimatePresence>
-            <motion.div className={css(styles.meebitsdaoBackground)}
-              transition={{ duration: .5, type: "tween" }}
-                initial={{ opacity: 0, y: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-              <motion.video
-                key={"https://d198suc4pour3z.cloudfront.net/meebits_fastmov.mp4"}
-                id="meebits-video"
-                className={css(styles.meebitBattle) + ' projects-background'}
-                src={"https://d198suc4pour3z.cloudfront.net/meebits_fastmov.mp4"}
-                type='video/mp4'
-                width='1023'
-                height='640'
-                alt='Meebits Battle'
-                loop
-                autoPlay
-                muted
-              />
-              <motion.img className={css(styles.meebitsdaoBlocks)} src={meebitsdaoBackground} />
-            </motion.div>
-          </AnimatePresence>
+          <motion.div className={css(styles.meebitsdaoBackground)}
+            transition={{ duration: .5, type: "tween", ease: 'easeInOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            >
+            <motion.video
+              key={"https://d198suc4pour3z.cloudfront.net/meebits_fastmov.mp4"}
+              id="meebits-video"
+              className={css(styles.meebitBattle) + ' projects-background'}
+              src={"https://d198suc4pour3z.cloudfront.net/meebits_fastmov.mp4"}
+              type='video/mp4'
+              width='1023'
+              height='640'
+              alt='Meebits Battle'
+              loop
+              autoPlay
+              muted
+            />
+          </motion.div>
         );
       case 'menschmaschine':
         return (
-          <AnimatePresence>
-            <motion.img
-              key="menschmaschine-animation"
-              className={css(styles.imageBackground)}
-              src={menschBackground}
-              width={2048}
-              height={1296}
-              transition={{ duration: .5, type: "tween" }}
-              initial={{ opacity: 0, y: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            />
-          </AnimatePresence>
+          <motion.img
+            key="menschmaschine-animation"
+            className={css(styles.imageBackground)}
+            src={menschBackground}
+            width={2048}
+            height={1296}
+            transition={{ duration: .5, type: "tween" }}
+            initial={{ opacity: 0, }}
+            animate={{ opacity: 1, }}
+            exit={{ opacity: 0 }}
+          />
         );
       case 'kryptosign':
         return (
-          <AnimatePresence>
-            <motion.img
-              key="kryptosign-animation"
-              className={css(styles.imageBackground)}
-              src={kryptosignBackground}
-              width={2048}
-              height={1296}
-              transition={{ duration: .5, type: "tween" }}
-              initial={{ opacity: 0, y: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            />
-          </AnimatePresence>
+          <motion.img
+            key="kryptosign-animation"
+            className={css(styles.imageBackground)}
+            src={kryptosignBackground}
+            width={2048}
+            height={1296}
+            transition={{ duration: .5, type: "tween" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          />
         );
       default:
         return null;
@@ -77,31 +69,27 @@ export default function ProjectsHero({activeProject, translate}) {
     switch(activeProject) {
       case 'menschmaschine':
         return (
-          <AnimatePresence>
-            <motion.img 
-              className={css(styles.menschPreview)}
-              src={menschPreview}
-              key="mensch-preview"
-              transition={{ duration: .5, type: "tween" }}
-              initial={{ opacity: 0, y: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            />
-          </AnimatePresence>
+          <motion.img 
+            className={css(styles.menschPreview)}
+            src={menschPreview}
+            key="mensch-preview"
+            transition={{ duration: .5, type: "tween" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          />
         );
       case 'kryptosign':
         return (
-          <AnimatePresence>
-            <motion.img 
-              className={css(styles.kryptosignPreview)}
-              src={kryptosignPreview}
-              key="kryptosign-preview"
-              transition={{ duration: .5, type: "tween" }}
-              initial={{ opacity: 0, y: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            />
-          </AnimatePresence>
+          <motion.img 
+            className={css(styles.kryptosignPreview)}
+            src={kryptosignPreview}
+            key="kryptosign-preview"
+            transition={{ duration: .5, type: "tween" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          />
         );
       default:
         return null;
@@ -116,8 +104,10 @@ export default function ProjectsHero({activeProject, translate}) {
         transform: `translate3d(0px, ${translate}px, 0px)`,
 
       }}>
-      { renderHero() }
-      { renderPreviews() }
+      <AnimatePresence>
+        { renderHero() }
+        { renderPreviews() }
+      </AnimatePresence>
     </div>
   )
 };
@@ -130,11 +120,11 @@ const styles = StyleSheet.create({
     background: '#000',
 
     "@media only screen and (min-width: 768px)": {
-      top: 840,
+      top: 800,
     },
 
     "@media only screen and (min-width: 1024px)": {
-      top: 780,
+      top: 800,
     },
 
     "@media only screen and (max-width: 767px)": {

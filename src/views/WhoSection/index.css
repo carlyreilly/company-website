@@ -11,3 +11,19 @@
 .BrainhubCarousel__arrows {
   background-color: unset!important;
 }
+
+.slick-prev {
+  left: 16px!important;
+}
+
+.slick-next {
+  right: 16px!important;
+}
+
+.slick-arrow {
+  z-index: 4!important;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 30px!important;
+}

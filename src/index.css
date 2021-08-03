@@ -4,13 +4,23 @@
 }
 html {
   font-size: 10px;
+  background: #000;
 }
 body {
   margin: 0;
   font-family: 'Barlow Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: #000; */
 }
 a {
   text-decoration: none;
+}
+
+button {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+#root {
+  overflow: hidden;
 }

@@ -1,11 +1,22 @@
 import { css, StyleSheet } from 'aphrodite';
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 
 import './index.css';
+
+import meebitsdaoBlocks from '../../assets/images/meebitsdaoBackground.webp';
+import menschBlocks from '../../assets/images/menschFloatingBlocks.webp';
+import kryptosignBlocks from '../../assets/images/kryptosignFloatingBlocks.webp';
 
 export default function ProjectsSection({activeProject, setActiveProject}) {
   const [meebitsVideoPlaying, setMeebitsVideoPlaying] = useState(false);
   
+  const floatingBlocks = {
+    meebitsdao: meebitsdaoBlocks,
+    menschmaschine: menschBlocks,
+    kryptosign: kryptosignBlocks,
+  }
+
   const projects = [
     {
       id: 'meebitsdao',
@@ -63,14 +74,16 @@ export default function ProjectsSection({activeProject, setActiveProject}) {
   return (
     <div id='projects-section' className={css(styles.container)}>
       <div className={css(styles.inlay)}>
-        {/* {activeProject === 'meebitsdao'
-          ? meebitsVideoPlaying
-            ? null
-            : <div className={css(styles.play)} onClick={playMeebitsVideo}>
-                <i class="fad fa-play-circle"></i>
-              </div>
-          : null
-        } */}
+        <AnimatePresence>
+          <motion.img 
+            className={css(styles.meebitsdaoBlocks)}
+            src={floatingBlocks[activeProject]}
+            transition={{ duration: .5, type: "tween" }}
+            initial={{ opacity: 0, }}
+            animate={{ opacity: 1, }}
+            exit={{ opacity: 0, }}
+          />
+        </AnimatePresence>
         <h2 className={css(styles.title)}>
           Our 
           <br />
@@ -109,6 +122,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'relative',
     minHeight: '100vh',
+    // background: '#000',
   },
   active: {
     opacity: 1,
@@ -158,6 +172,14 @@ const styles = StyleSheet.create({
       transform: 'translateX(-50%)',
       fontSize: '12em',
     }
+  },
+  meebitsdaoBlocks: {
+    height: '90%',
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    zIndex: -1,
+    objectFit: 'contain',
   },
   project: {
     width: '100%',

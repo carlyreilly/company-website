@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
     height: 'calc(100vh - 100px)',
     maxHeight: 800,
     paddingTop: 100,
+    minHeight: 550,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

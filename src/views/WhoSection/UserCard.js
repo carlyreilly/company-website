@@ -25,6 +25,7 @@ export default function UserCard({img, name, description}) {
 
 const styles = StyleSheet.create({
   container: {
+    margin: '0 auto',
     width: 290,
     height: 385,
     background: '#000',
@@ -36,8 +37,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
 
     ':hover': {
-      transform: 'scale(1.05)',
-      transition: '.5s ease-in-out',
+      // transform: 'scale(1.05)',
+      // transition: '.5s ease-in-out',
     }
   },
   avatar: {

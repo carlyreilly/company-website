@@ -8,6 +8,10 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import './index.css';
 import UserCard from './UserCard';
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const members = [
   {
     name: 'Luke',
@@ -69,68 +73,31 @@ export default function WhoSection() {
         </p>
       </div>
       <div className={css(styles.carouselSection)}>
-        <Carousel
-          plugins={[
-            'arrows',
-            'infinite',
+        <Slider
+          dots={false}
+          infinite={true}
+          slidesToShow={4}
+          adaptiveHeight={true}
+          responsive={[
             {
-              resolve: slidesToShowPlugin,
-              options: {
-                numberOfSlides: 4
+              breakpoint: 1250,
+              settings: {
+                slidesToShow: 3,
               }
             },
+            {
+              breakpoint: 900,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              }
+            }
           ]}
-          breakpoints={{
-            767: {
-              plugins: [
-                'arrows',
-                'infinite',
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 1,
-                  },
-                },
-              ],
-            },
-            1000: {
-              plugins: [
-                'arrows',
-                'infinite',
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 4,
-                  },
-                },
-              ],
-            },
-            1100: {
-              plugins: [
-                'arrows',
-                'infinite',
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 4,
-                  },
-                },
-              ],
-            },
-            1300: {
-              plugins: [
-                'arrows',
-                'infinite',
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 4,
-                  },
-                },
-              ],
-            },
-          }
-        }
         >
           { members.map((member, index) => {
             return (
@@ -142,7 +109,7 @@ export default function WhoSection() {
               />
             )
           }) }
-        </Carousel>
+        </Slider>
       </div>
     </div>
   );
